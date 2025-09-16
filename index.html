@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio</title>
-	<link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/linux-terminal.png">
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/linux-terminal.png">
+  <title>Portfolio Fullstack Developer</title>
   <style>
     body {
       margin: 0;
@@ -19,20 +19,34 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     header h1 {
       margin: 0;
       font-size: 18px;
       color: #9cdcfe;
     }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     nav a {
-      margin-left: 15px;
+      margin: 5px;
       color: #ce9178;
       text-decoration: none;
       font-size: 14px;
     }
     nav a:hover {
       color: #dcdcaa;
+    }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-left: 15px;
+      border: 2px solid transparent;
+      box-shadow: 0 0 15px #c9fcb8;
     }
     section {
       padding: 20px;
@@ -69,9 +83,25 @@
       text-align: center;
       background: #252526;
       color: #808080;
+      box-shadow: 0 -2px 10px #c9fcb8;
     }
+
     a {
       color: #4fc1ff;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+      filter: invert(73%) sepia(4%) saturate(54%) hue-rotate(134deg) brightness(90%) contrast(86%);
+    }
+    .social-icons img:hover {
+      transform: scale(1.2);
     }
 
     /* Syntax highlighting mirip VS Code */
@@ -95,29 +125,80 @@
       0%, 50% { background: #d4d4d4; }
       51%, 100% { background: transparent; }
     }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header h1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .profile-pic {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+      }
+      nav a {
+        font-size: 13px;
+      }
+      section h2 {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 14px;
+      }
+      nav a {
+        font-size: 12px;
+      }
+      .profile-pic {
+        width: 35px;
+        height: 35px;
+      }
+      section {
+        padding: 15px;
+      }
+      section p, li, .skills span {
+        font-size: 12px;
+      }
+      .skills span {
+        padding: 4px 8px;
+      }
+      footer {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1><span class="variable">FirmanAgus</span>@portfolio:~$<span class="cursor"></span></h1>
-    <nav>
-      <a href="#about" class="function">about()</a>
-      <a href="#skills" class="function">skills()</a>
-      <a href="#projects" class="function">projects()</a>
-      <a href="#contact" class="function">contact()</a>
-    </nav>
+    <div style="display:flex; align-items:center; flex-wrap:wrap; justify-content:center;">
+      <nav>
+        <a href="#about" class="function">about()</a>
+        <a href="#skills" class="function">skills()</a>
+        <a href="#projects" class="function">projects()</a>
+        <a href="#contact" class="function">contact()</a>
+      </nav>
+      <img src="Toki.png" alt="Profile Picture" class="profile-pic">
+    </div>
   </header>
 
   <section id="about">
-    <p><span class="prompt">firman@nyarchlinux</span>:~$ cat about.js<span class="cursor"></span></p>
+    <p><span class="prompt">firman@linux</span>:~$ cat about.js<span class="cursor"></span></p>
     <h2><span class="keyword">function</span> <span class="function">about</span>() {</h2>
     <p>  <span class="keyword">return</span> <span class="string">"Saya seorang Fullstack Developer dengan fokus pada Backend (API, database, arsitektur sistem) dan Frontend (UI/UX, interaktivitas, responsive design)."</span></p>
-	<p>  <span class="keyword">return</span> <span class="string">"Tetapi di 2025 ini saya sedang sangat malas mengerjakan project yang sedang saya dalami dan lebih mengutamakan scroll fesnuk dan instagram."</span></p>
+	  <p>  <span class="keyword">return</span> <span class="string">"Tetapi di 2025 ini saya sedang sangat malas mengerjakan project yang sedang saya dalami dan lebih mengutamakan scroll fesnuk dan instagram."</span></p>
     <h2>}<span class="cursor"></span></h2>
   </section>
 
   <section id="skills">
-    <p><span class="prompt">firman@nyarchlinux</span>:~$ cat skills.js<span class="cursor"></span></p>
+    <p><span class="prompt">firman@linux</span>:~$ cat skills.js<span class="cursor"></span></p>
     <h2><span class="keyword">const</span> <span class="variable">skills</span> = [</h2>
     <div class="skills">
       <span class="string">"Node.js"</span>
@@ -128,7 +209,8 @@
       <span class="string">"React"</span>
       <span class="string">"Vue.js"</span>
       <span class="string">"HTML/CSS/JS"</span>
-      <span class="string">"Ruby"</span>
+      <span class="string">"TailwindCSS"</span>
+		<span class="string">"Ruby"</span>
 	  <span class="string">"PHP"</span>
 	  <span class="string">"Python"</span>
 	  <span class="string">"Watching Anime"</span>
@@ -139,7 +221,7 @@
   </section>
 
   <section id="projects">
-    <p><span class="prompt">firman@nyarchlinux</span>:~$ cat projects.js<span class="cursor"></span></p>
+    <p><span class="prompt">firman@linux</span>:~$ cat projects.js<span class="cursor"></span></p>
     <h2><span class="keyword">const</span> <span class="variable">projects</span> = [</h2>
     <ul>
       <li><span class="string">"Auth Service dengan JWT dan OAuth"</span></li>
@@ -152,18 +234,20 @@
   </section>
 
   <section id="contact">
-    <p><span class="prompt">firman@nyarchlinux</span>:~$ cat contact.js<span class="cursor"></span></p>
+    <p><span class="prompt">firman@linux</span>:~$ cat contact.js<span class="cursor"></span></p>
     <h2><span class="keyword">function</span> <span class="function">contact</span>() {</h2>
-    <p>  <span class="keyword">return</span> <span class="string">"Email: <a href=\"mailto:firtod.dev@gmail.com\">firtod.dev@gmail.com</a>"</span></p>
-	<p>  <span class="keyword">return</span> <span class="string">"Facebook: <a href=\"https://facebook.com/0x2017">Facebook</a>"</span></p>
-	<p>  <span class="keyword">return</span> <span class="string">"Instagram: <a href=\"https://instagram.com/firman.x0x">Instagram</a>"</span></p>
-	<p>  <span class="keyword">return</span> <span class="string">"Github: <a href=\"https://github.com/Hiimeka">Github</a>"</span></p>
+    <p>  <span class="keyword">return</span> <span class="string">"Email: <a href=\"mailto:firman@example.com\">firman@example.com</a>"</span></p>
     <h2>}<span class="cursor"></span></h2>
   </section>
 
   <footer>
-    <p><span class="prompt">firman@nyarchlinux</span>:~$ echo "© <span id="year"></span> Firman Agus Sugihartono // Fullstack Developer"<span class="cursor"></span></p>
-    <span class="comment">// output: copyright by Firman Agus Sugihartono // lazy boy in 2025</span>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://instagram.com" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://github.com" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub"></a>
+    </div>
+    <p><span class="prompt">firman@linux</span>:~$ echo "© <span id="year"></span> Firman Agus — Fullstack Developer"<span class="cursor"></span></p>
+    <span class="comment">// output: tampilkan copyright</span>
   </footer>
 
   <script>
@@ -171,4 +255,3 @@
   </script>
 </body>
 </html>
-
